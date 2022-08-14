@@ -1,7 +1,8 @@
 streamlit
 streamlit-option-menu
 streamlit_lottie
-pandas
+pandas==1.4.1
+numpy==1.21.5
 plotly
 scikit-learn==0.24.2
 seaborn
