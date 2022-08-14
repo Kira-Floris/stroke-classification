@@ -1,9 +1,4 @@
-pandas
-numpy
-matplotlib
-seaborn
-plotly
 streamlit
 streamlit-option-menu
-scikit-learn==0.22.1
+pandas
 streamlit_lottie
