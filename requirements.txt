@@ -3,5 +3,5 @@ streamlit-option-menu
 streamlit_lottie
 pandas
 plotly
-scikit-learn==0.22.1
+scikit-learn
 seaborn
