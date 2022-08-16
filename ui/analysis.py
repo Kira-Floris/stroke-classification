@@ -63,5 +63,3 @@ def filter(df):
 def analysis(df):
 	st.header('Analysis')
 	filter(df)
-
-	return 
