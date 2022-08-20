@@ -15,6 +15,7 @@ gnb = pickle.load(open('./models/gnb.pkl', 'rb'))
 knn = pickle.load(open('./models/knn.pkl', 'rb'))
 lr = pickle.load(open('./models/lr.pkl', 'rb'))
 svm = pickle.load(open('./models/svm.pkl', 'rb'))
+rfc = pickle.load(open('./models/rfc.pkl', 'rb'))
 
 file = open('./results/models.json','rb')
 results = json.load(file)
@@ -64,6 +65,7 @@ def form(df):
 		    # predicting for the model
 			
 			dt_ = dt.predict([[inputs['gender'],inputs['age'],inputs['hypertension'],inputs['heart_disease'],inputs['ever_married'],inputs['work_type'],inputs['residence_type'],inputs['avg_glucose_level'],inputs['bmi'],inputs['smoking_status']]])
+			rfc_ = rfc.predict([[inputs['gender'],inputs['age'],inputs['hypertension'],inputs['heart_disease'],inputs['ever_married'],inputs['work_type'],inputs['residence_type'],inputs['avg_glucose_level'],inputs['bmi'],inputs['smoking_status']]])
 			gnb_ = gnb.predict([[inputs['gender'],inputs['age'],inputs['hypertension'],inputs['heart_disease'],inputs['ever_married'],inputs['work_type'],inputs['residence_type'],inputs['avg_glucose_level'],inputs['bmi'],inputs['smoking_status']]])
 			knn_ = knn.predict([[inputs['gender'],inputs['age'],inputs['hypertension'],inputs['heart_disease'],inputs['ever_married'],inputs['work_type'],inputs['residence_type'],inputs['avg_glucose_level'],inputs['bmi'],inputs['smoking_status']]])
 			lr_ = lr.predict([[inputs['gender'],inputs['age'],inputs['hypertension'],inputs['heart_disease'],inputs['ever_married'],inputs['work_type'],inputs['residence_type'],inputs['avg_glucose_level'],inputs['bmi'],inputs['smoking_status']]])
@@ -72,6 +74,7 @@ def form(df):
 			st.subheader('Predicted Classifications')
 
 			st.text('decision tree: '+str(dt_[0]))
+			st.text('random forest classifier: '+str(rfc_[0]))
 			st.text('gnb: '+str(gnb_[0]))
 			st.text('knn: '+str(knn_[0]))
 			st.text('linear regression: '+str(lr_[0]))
